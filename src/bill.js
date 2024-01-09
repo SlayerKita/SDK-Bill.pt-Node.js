@@ -566,223 +566,223 @@ class ApiClient {
     this.api_token = api_token;
   }
 
-  getToken(params) {
+  async getToken(params) {
     return this.request('POST', 'auth/login', params);
   }
 
-  getDocumentAllTypes() {
+  async getDocumentAllTypes() {
     return this.request('GET', 'tipos-documento');
   }
 
-  getDocumentTypesOf(category) {
+  async getDocumentTypesOf(category) {
     return this.request('GET', 'tipos-documento/' + category);
   }
 
-  getPaymentMethods() {
+  async getPaymentMethods() {
     return this.request('GET', 'metodos-pagamento');
   }
 
-  getDeliveryMethods() {
+  async getDeliveryMethods() {
     return this.request('GET', 'metodos-expedicao');
   }
 
-  createDeliveryMethod(params) {
+  async createDeliveryMethod(params) {
     return this.request('POST', 'metodos-expedicao', params);
   }
 
-  updateDeliveryMethod(id, params) {
+  async updateDeliveryMethod(id, params) {
     return this.request('PATCH', 'metodos-expedicao/' + id, params);
   }
 
-  deleteDeliveryMethod(id) {
+  async deleteDeliveryMethod(id) {
     return this.request('DELETE', 'metodos-expedicao/' + id);
   }
 
-  getMeasurementUnits() {
+  async getMeasurementUnits() {
     return this.request('GET', 'unidades-medida');
   }
 
-  createMeasurementUnit(params) {
+  async createMeasurementUnit(params) {
     return this.request('POST', 'unidades-medida', params);
   }
 
-  updateMeasurementUnit(id, params) {
+  async updateMeasurementUnit(id, params) {
     return this.request('PATCH', 'unidades-medida/' + id, params);
   }
 
-  deleteMeasurementUnit(id) {
+  async deleteMeasurementUnit(id) {
     return this.request('DELETE', 'unidades-medida/' + id);
   }
 
-  getVehicles() {
+  async getVehicles() {
     return this.request('GET', 'viaturas');
   }
 
-  createVehicle(params) {
+  async createVehicle(params) {
     return this.request('POST', 'viaturas', params);
   }
 
-  updateVehicle(id, params) {
+  async updateVehicle(id, params) {
     return this.request('PATCH', 'viaturas/' + id, params);
   }
 
-  deleteVehicle(id) {
+  async deleteVehicle(id) {
     return this.request('DELETE', 'viaturas/' + id);
   }
 
-  getDocumentSets() {
+  async getDocumentSets() {
     return this.request('GET', 'series');
   }
 
-  createDocumentSet(params) {
+  async createDocumentSet(params) {
     return this.request('POST', 'series', params);
   }
 
-  updateDocumentSet(id, params) {
+  async updateDocumentSet(id, params) {
     return this.request('PATCH', 'series/' + id, params);
   }
 
-  deleteDocumentSet(id) {
+  async deleteDocumentSet(id) {
     return this.request('DELETE', 'series/' + id);
   }
 
-  getTaxs() {
+  async getTaxs() {
     return this.request('GET', 'impostos');
   }
 
-  createTax(params) {
+  async createTax(params) {
     return this.request('POST', 'impostos', params);
   }
 
-  updateTax(id, params) {
+  async updateTax(id, params) {
     return this.request('PATCH', 'impostos/' + id, params);
   }
 
-  deleteTax(id) {
+  async deleteTax(id) {
     return this.request('DELETE', 'impostos/' + id);
   }
 
-  getTaxExemptions() {
+  async getTaxExemptions() {
     return this.request('GET', 'motivos-isencao');
   }
 
-  getWarehouses() {
+  async getWarehouses() {
     return this.request('GET', 'lojas');
   }
 
-  createWarehouse(params) {
+  async createWarehouse(params) {
     return this.request('POST', 'lojas', params);
   }
 
-  updateWarehouse(id, params) {
+  async updateWarehouse(id, params) {
     return this.request('PATCH', 'lojas/' + id, params);
   }
 
-  deleteWarehouse(id) {
+  async deleteWarehouse(id) {
     return this.request('DELETE', 'lojas/' + id);
   }
 
-  getContacts(params = {}) {
+  async getContacts(params = {}) {
     return this.request('GET', 'contatos', params);
   }
 
-  getContactWithID(id, params = {}) {
+  async getContactWithID(id, params = {}) {
     return this.request('GET', 'contatos/' + id, params);
   }
 
-  createContact(params) {
+  async createContact(params) {
     return this.request('POST', 'contatos', params);
   }
 
-  updateContact(id, params) {
+  async updateContact(id, params) {
     return this.request('PATCH', 'contatos/' + id, params);
   }
 
-  deleteContact(id) {
+  async deleteContact(id) {
     return this.request('DELETE', 'contatos/' + id);
   }
 
-  getItems(params = {}) {
+  async getItems(params = {}) {
     return this.request('GET', 'items', params);
   }
 
-  getItemWithID(id, params = {}) {
+  async getItemWithID(id, params = {}) {
     return this.request('GET', 'items/' + id, params);
   }
 
-  createItem(params) {
+  async createItem(params) {
     return this.request('POST', 'items', params);
   }
 
-  updateItem(id, params) {
+  async updateItem(id, params) {
     return this.request('PATCH', 'items/' + id, params);
   }
 
-  deleteItem(id) {
+  async deleteItem(id) {
     return this.request('DELETE', 'items/' + id);
   }
 
-  getDocuments(params) {
+  async getDocuments(params) {
     return this.request('GET', 'documentos', params);
   }
 
-  getDocumentWithID(id, params = {}) {
+  async getDocumentWithID(id, params = {}) {
     return this.request('GET', 'documentos/' + id, params);
   }
 
-  createDocument(params) {
+  async createDocument(params) {
     return this.request('POST', 'documentos', params);
   }
 
-  deleteDocument(id) {
+  async deleteDocument(id) {
     return this.request('DELETE', 'documentos/' + id);
   }
 
-  createDocumentOpeningBalance(params) {
+  async createDocumentOpeningBalance(params) {
     return this.request('POST', 'documentos/saldo-inicial', params);
   }
 
-  communicateBillOfLanding(id) {
+  async communicateBillOfLanding(id) {
     return this.request('POST', 'documentos/comunicar/guia/' + id);
   }
 
-  addTransportationCodeManually(params) {
+  async addTransportationCodeManually(params) {
     return this.request('POST', 'documentos/adicionar/codigo-at', params);
   }
 
-  emailDocument(params) {
+  async emailDocument(params) {
     return this.request('POST', 'documentos/enviar-por-email', params);
   }
 
-  addPrivateNoteToDocument(params) {
+  async addPrivateNoteToDocument(params) {
     return this.request('POST', 'documentos/nota-documento', params);
   }
 
-  getStock(params = {}) {
+  async getStock(params = {}) {
     return this.request('GET', 'stock', params);
   }
 
-  getStockSingleItem(params = {}) {
+  async getStockSingleItem(params = {}) {
     return this.request('GET', 'stock/singular', params);
   }
 
-  getStockMovements(params = {}) {
+  async getStockMovements(params = {}) {
     return this.request('GET', 'stock/movimentos', params);
   }
 
-  documentsWithPendingMovementsFromContact(params = {}) {
+  async documentsWithPendingMovementsFromContact(params = {}) {
     return this.request('GET', 'movimentos-pendentes', params);
   }
 
-  pendingMovementsOfMultipleDocuments(params = {}) {
+  async pendingMovementsOfMultipleDocuments(params = {}) {
     return this.request('GET', 'movimentos-pendentes/multiplos', params);
   }
 
-  pendingMovementsOfSingleDocument(id) {
+  async pendingMovementsOfSingleDocument(id) {
     return this.request('GET', 'movimentos-pendentes/' + id);
   }
 
-  convertDocumentWithID(
+  async convertDocumentWithID(
     document_id,
     convert_to,
     date = null,
@@ -872,102 +872,103 @@ class ApiClient {
     return createDocument(document);
   }
 
-  createReceipt(params) {
+  async createReceipt(params) {
     return request('POST', 'recibos/', params);
   }
 
-  createReceiptToDocumentWithID(id, params = []) {
+  async createReceiptToDocumentWithID(id, params = []) {
     return request('POST', `recibos/pagar/${id}`, params);
   }
 
-  setTaxAuthorityLoginInformation(params) {
+  async setTaxAuthorityLoginInformation(params) {
     return request('POST', 'at/configurar', params);
   }
 
-  testTaxAuthorityLogin() {
+  async testTaxAuthorityLogin() {
     return request('POST', 'at/teste-dados-at');
   }
 
-  taxAuthorityLoginState() {
+  async taxAuthorityLoginState() {
     return request('POST', 'at/estado-configuracao');
   }
-  taxAuthortiyCommunicationLog(params = []) {
+
+  async taxAuthortiyCommunicationLog(params = []) {
     return request('POST', 'at/registo-comunicacoes', params);
   }
 
-  getContactTypes(params = []) {
+  async getContactTypes(params = []) {
     return request('GET', 'tipos', params);
   }
 
-  createContactType(params = []) {
+  async createContactType(params = []) {
     return request('POST', 'tipos', params);
   }
 
-  updateContactType(id, params = []) {
+  async updateContactType(id, params = []) {
     return request('PATCH', `tipos/${id}`, params);
   }
 
-  getItemCategories(params = []) {
+  async getItemCategories(params = []) {
     return request('GET', 'categorias', params);
   }
 
-  createItemCategory(params = []) {
+  async createItemCategory(params = []) {
     return request('POST', 'categorias', params);
   }
 
-  updateItemCategory(id, params = []) {
+  async updateItemCategory(id, params = []) {
     return request('PATCH', `categorias/${id}`, params);
   }
 
-  getDocumentStates(params = []) {
+  async getDocumentStates(params = []) {
     return request('GET', 'estados', params);
   }
 
-  createDocumentState(params = []) {
+  async createDocumentState(params = []) {
     return request('POST', 'estados', params);
   }
 
-  updateDocumentState(id, params = []) {
+  async updateDocumentState(id, params = []) {
     return request('PATCH', `estados/${id}`, params);
   }
 
-  deleteDocumentState(id) {
+  async deleteDocumentState(id) {
     return request('DELETE', `estados/${id}`);
   }
 
-  changeDocumentState(params = []) {
+  async changeDocumentState(params = []) {
     return request('POST', 'estados/mudar-estado', params);
   }
 
-  getSmtp() {
+  async getSmtp() {
     return request('GET', 'smtp');
   }
 
-  createSmtp(params = []) {
+  async createSmtp(params = []) {
     return request('POST', 'smtp', params);
   }
 
-  deleteSmtp() {
+  async deleteSmtp() {
     return request('DELETE', 'smtp');
   }
 
-  sendSmtpEmailTest(params = []) {
+  async sendSmtpEmailTest(params = []) {
     return request('POST', 'smtp/email-teste', params);
   }
 
-  getEmailTemplates(params = []) {
+  async getEmailTemplates(params = []) {
     return request('GET', 'email-template', params);
   }
 
-  createEmailTemplate(params = []) {
+  async createEmailTemplate(params = []) {
     return request('POST', 'email-template', params);
   }
 
-  updateEmailTemplate(id, params = []) {
+  async updateEmailTemplate(id, params = []) {
     return request('PATCH', `email-template/${id}`, params);
   }
 
-  deleteEmailTemplate(id) {
+  async deleteEmailTemplate(id) {
     return request('DELETE', `email-template/${id}`);
   }
 
@@ -1101,7 +1102,24 @@ class ApiClient {
 const apiClient = new ApiClient('dev', '1.0');
 console.log(apiClient.mode);
 console.log(apiClient.version);
+apiClient.setToken(
+  'KHo3hrxmtxyTkmX4XVIgaX4SwLRaWRJ8QZUBnOC4Wqth5Rgs5sXnGmxWENIybee7CVL9OZ4yYAbjBeMzaAWHRuCsDVPrPZKUhhvVNUGtzFkrRLpBiY5hfmz0lpFGfZYB'
+);
 
 console.log(apiClient.isValidCurrency('VEB_Bs'));
 console.log(apiClient.isValidZipCode('1A00-018'));
 console.log(apiClient.isValidDateTime('2018-12-25 23:50:55'));
+
+apiClient.validToken().then(function (response) {
+  console.log(response);
+});
+
+apiClient
+  .getToken({ 'email': 'kita.rico@gmail.com', 'password': '123456' })
+  .then(function (response) {
+    console.log(response);
+  });
+
+apiClient.getDocumentAllTypes().then(function (response) {
+  console.log(response);
+});
