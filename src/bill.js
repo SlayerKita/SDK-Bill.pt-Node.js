@@ -1123,3 +1123,13 @@ apiClient
 apiClient.getDocumentAllTypes().then(function (response) {
   console.log(response);
 });
+
+apiClient.getMeasurementUnits().then(function (response) {
+  console.log(response);
+});
+
+apiClient
+  .createMeasurementUnit({ 'nome': 'Kelvin', 'simbolo': 'K' })
+  .then(function (response) {
+    console.log(response);
+  });
