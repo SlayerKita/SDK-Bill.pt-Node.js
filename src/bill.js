@@ -1102,9 +1102,7 @@ class ApiClient {
 const apiClient = new ApiClient('dev', '1.0');
 console.log(apiClient.mode);
 console.log(apiClient.version);
-apiClient.setToken(
-  'KHo3hrxmtxyTkmX4XVIgaX4SwLRaWRJ8QZUBnOC4Wqth5Rgs5sXnGmxWENIybee7CVL9OZ4yYAbjBeMzaAWHRuCsDVPrPZKUhhvVNUGtzFkrRLpBiY5hfmz0lpFGfZYB'
-);
+apiClient.setToken('YOURTOKENHERE');
 
 console.log(apiClient.isValidCurrency('VEB_Bs'));
 console.log(apiClient.isValidZipCode('1A00-018'));
@@ -1115,7 +1113,7 @@ apiClient.validToken().then(function (response) {
 });
 
 apiClient
-  .getToken({ 'email': 'kita.rico@gmail.com', 'password': '123456' })
+  .getToken({ 'email': 'YOURMAILHERE@gmail.com', 'password': '123456' })
   .then(function (response) {
     console.log(response);
   });
