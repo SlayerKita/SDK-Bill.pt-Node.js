@@ -14,7 +14,7 @@ Visite o [site oficial do Bill.pt](https://bill.pt) para obter mais informaçõe
 
 ## Exemplos
 
-Este repositório inclui uma série de exemplos que demonstram como usar o SDK para interagir com a API do Bill.pt. Os exemplos podem ser encontrados no diretório `exemplos`. Consulte o [ficheiro de exemplos](exemplos/README.md) para mais detalhes.
+Este repositório inclui uma série de exemplos que demonstram como usar o SDK para interagir com a API do Bill.pt. Os exemplos podem ser encontrados no diretório `exemplos`. Consulte o [ficheiro de exemplos](https://github.com/SlayerKita/bill/blob/main/examples.js) para mais detalhes.
 
 ```javascript
 // Examples
