@@ -738,6 +738,10 @@ class ApiClient {
     return this.request('DELETE', 'documentos/' + id);
   }
 
+  async voidDocument(params) {
+    return this.request('PATCH', 'documentos', params);
+  }
+
   async createDocumentOpeningBalance(params) {
     return this.request('POST', 'documentos/saldo-inicial', params);
   }
@@ -1100,9 +1104,61 @@ class ApiClient {
 
 // Example usage:
 const apiClient = new ApiClient('dev', '1.0');
-console.log(apiClient.mode);
-console.log(apiClient.version);
-apiClient.setToken('YOURTOKENHERE');
+apiClient.setToken('KHo3hrxmtxyTkmX4XVIgaX4SwLRaWRJ8QZUBnOC4Wqth5Rgs5sXnGmxWENIybee7CVL9OZ4yYAbjBeMzaAWHRuCsDVPrPZKUhhvVNUGtzFkrRLpBiY5hfmz0lpFGfZYB');
+
+apiClient.createDocument({
+  'contato' : {
+  'nome' : 'Consumidor Final',
+  'pais' : 'PT'
+  }, 
+  'tipificacao': 'FT', 
+  'produtos': [
+  {
+    'item_id': 13017, 
+    'nome': 'Porta de Madeira',
+    'quantidade' : 1,
+    'imposto' : 23, //igual a 23% <- também pode usar imposto_id
+    'preco_unitario' : 12
+  }
+  ],
+  'terminado' : 1 // 0 <- rascunho
+}).then(function (response) {
+  console.log(response);
+});
+return ;
+//criar um artigo
+var unidade_medida = imposto = null;
+apiClient.getMeasurementUnits().then(function (response) {
+  unidade_medida = response;
+}).then(function(){
+  apiClient.getTaxs().then(function (response) {
+    imposto = response;
+  }).then(function () {
+      apiClient.createItem({
+        'descricao': 'Porta de Madeira',
+        'codigo' : 'AAA1234',
+        'unidade_medida_id': unidade_medida[0].id,
+        'imposto_id': imposto[0].id,
+        'iva_compra': imposto[0].id,
+      }).then(function (response) {
+        console.log(response);
+      });
+  });
+});
+
+
+
+return ;
+apiClient.getDocumentAllTypes().then(function (response) {
+  console.log(response);
+});
+
+apiClient.getMeasurementUnits().then(function (response) {
+  console.log(response);
+});
+return ;
+
+//apiClient.setToken('YOURTOKENHERE');
 
 console.log(apiClient.isValidCurrency('VEB_Bs'));
 console.log(apiClient.isValidZipCode('1A00-018'));
@@ -1111,12 +1167,6 @@ console.log(apiClient.isValidDateTime('2018-12-25 23:50:55'));
 apiClient.validToken().then(function (response) {
   console.log(response);
 });
-
-apiClient
-  .getToken({ 'email': 'YOURMAILHERE@gmail.com', 'password': '123456' })
-  .then(function (response) {
-    console.log(response);
-  });
 
 apiClient.getDocumentAllTypes().then(function (response) {
   console.log(response);
