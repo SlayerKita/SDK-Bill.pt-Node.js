@@ -13,6 +13,9 @@ A documentação completa da API pode ser encontrada em [https://api.bill.pt](ht
 Visite o [site oficial do Bill.pt](https://bill.pt) para obter mais informações sobre o software de faturação.
 
 ## Exemplos
+Para instalar as dependencias faça npm install.
+
+Para obter uma de desenvolvimento contacte o suporte do bill.pt.
 
 Este repositório inclui uma série de exemplos que demonstram como usar o SDK para interagir com a API do Bill.pt. Os exemplos podem ser encontrados no diretório `exemplos`. Consulte o [ficheiro de exemplos](https://github.com/SlayerKita/bill/blob/main/examples.js) para mais detalhes.
 
